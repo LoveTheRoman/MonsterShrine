@@ -1,0 +1,66 @@
+.navbar {
+  position: fixed; /* add this line */
+  top: 0; /* add this line */
+  width: 100%; /* add this line */
+  background-color: #6600CC; /* bright purple background */
+  color: #FFFFFF; /* white text */
+  padding: 1em; /* add some padding */
+  text-align: center; /* center the navbar items */
+  font-family: Arial, sans-serif; /* use a classic font */
+  border-bottom: 1px solid #FF00FF; /* add a neon pink border */
+}
+
+.navbar-item {
+  margin-right: 20px; /* add some space between navbar items */
+  text-decoration: none; /* remove underline from links */
+  color: #FFFFFF; /* white text */
+  font-size: 18px; /* make the text a bit bigger */
+}
+
+.navbar-item:hover {
+  color: #FFCC00; /* change text color to a bright yellow on hover */
+  text-decoration: underline; /* add an underline on hover */
+}
+
+body {
+  background-color: #000000; /* black background */
+  background-image: url("bg.gif"); /* add a starry night sky background image */
+  background-repeat: repeat; /* repeat the background image */
+  font-family: Arial, sans-serif; /* use a classic font */
+  color: #FFFFFF; /* white text */
+  text-align: center; /* center the text */
+
+}
+
+body a {
+  color: #FF00FF; /* neon pink links */
+  text-decoration: none; /* remove underline from links */
+}
+
+body a:hover {
+  color: #FFFFFF; /* white text on hover */
+  text-decoration: underline; /* add an underline on hover */
+}
+
+.content {
+  padding: 2em; /* add some padding */
+  font-size: 18px; /* make the text a bit bigger */
+}
+
+.footer {
+  position: absolute; /* add this line */
+  bottom: 0; /* add this line */
+  width: 100%; /* add this line */
+  background-color: #6600CC; /* bright purple background */
+  color: #FFFFFF; /* white text */
+  padding: 1em; /* add some padding */
+  text-align: center; /* center the text */
+  font-size: 14px; /* make the text a bit smaller */
+}
+
+/* Custom images */
+.monster-energy-can {
+  width: 100px; /* set the width of the image */
+  height: 100px; /* set the height of the image */
+  border: 1px solid #FF00FF; /* add a neon pink border */
+}

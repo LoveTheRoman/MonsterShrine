@@ -1,0 +1,108 @@
+.navbar {
+  position: fixed; /* add this line */
+  top: 0; /* add this line */
+  width: 100%; /* add this line */
+  background-color: #6600CC; /* bright purple background */
+  color: #FFFFFF; /* white text */
+  padding: 1em; /* add some padding */
+  text-align: center; /* center the navbar items */
+  font-family: Arial, sans-serif; /* use a classic font */
+  border-bottom: 1px solid #FF00FF; /* add a neon pink border */
+}
+
+.navbar-item {
+  margin-right: 20px; /* add some space between navbar items */
+  text-decoration: none; /* remove underline from links */
+  color: #FFFFFF; /* white text */
+  font-size: 18px; /* make the text a bit bigger */
+}
+
+.navbar-item:hover {
+  color: #FFCC00; /* change text color to a bright yellow on hover */
+  text-decoration: underline; /* add an underline on hover */
+}
+
+body {
+  background-color: #000000; /* black background */
+  background-image: url("bg.gif"); /* add a starry night sky background image */
+  background-repeat: repeat; /* repeat the background image */
+  font-family: Arial, sans-serif; /* use a classic font */
+  color: #FFFFFF; /* white text */
+  text-align: center; /* center the text */
+}
+
+body a {
+  color: #FF00FF; /* neon pink links */
+  text-decoration: none; /* remove underline from links */
+}
+
+body a:hover {
+  color: #FFFFFF; /* white text on hover */
+  text-decoration: underline; /* add an underline on hover */
+}
+
+.content {
+  padding: 2em; /* add some padding */
+  font-size: 18px; /* make the text a bit bigger */
+}
+
+.footer {
+  background-color: #6600CC; /* bright purple background */
+  color: #FFFFFF; /* white text */
+  padding: 1em; /* add some padding */
+  text-align: center; /* center the text */
+  font-size: 14px; /* make the text a bit smaller */
+  position: fixed; /* add this line */
+  bottom: 0; /* add this line */
+  width: 100%; /* add this line */
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-column {
+  flex-basis: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  position: relative;
+}
+
+.gallery-column img {
+  width: 50%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.gallery-column .description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.gallery-column h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.gallery-column p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
