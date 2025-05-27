@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Monster Shrine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="auth-buttons" class="top-right-button">
+        <div id="profile-dropdown">
+            <img id="profile-pic" src="default-user.png" alt="Profile">
+            <span id="username-display">Loading...</span>
+            <div class="dropdown-content">
+                <a href="profile.html">My Profile</a>
+                <a href="#" id="logout-button">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html" class="navbar-item">Home</a>
+        <a href="games.html" class="navbar-item">Games</a>
+        <a href="monster-review.html" class="navbar-item">Monster Energy Review</a>
+        <a href="about.html" class="navbar-item">About</a>
+    </div>
+
+    <div class="profile-container">
+        <h1>MY MONSTER PROFILE</h1>
+        
+<div class="profile-header">
+    <div class="avatar-edit">
+        <img id="profile-avatar" src="default-user.png" alt="Profile Picture">
+        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+        <button id="change-avatar">CHANGE MONSTER FACE</button>
+    </div>
+    <h2 id="profile-username">Monster Enthusiast</h2>
+    <p id="profile-email">chugging@monster.com</p>
+</div>
+
+        <div class="profile-stats">
+            <div class="stat-box">
+                <h3>Monsters Chugged</h3>
+                <p id="monsters-chugged">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Redbulls Hated</h3>
+                <p id="redbulls-hated">∞</p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <button id="edit-profile">Edit My Monster Stats</button>
+            <button id="change-password">Change Secret Formula</button>
+        </div>
+    </div>
+</body>
+</html>

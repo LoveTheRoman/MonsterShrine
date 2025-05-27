@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Monster Shrine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="navbar-item">Home</a>
+        <a href="games.html" class="navbar-item">Games</a>
+        <a href="monster-review.html" class="navbar-item">Monster Energy Review</a>
+        <a href="about.html" class="navbar-item">About</a>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <button class="tab-button active" data-tab="login">Login</button>
+            <button class="tab-button" data-tab="register">Register</button>
+        </div>
+
+        <div id="login" class="auth-content active">
+            <h2>Login to Monster Shrine</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Monster-fueled Email" required>
+                <input type="password" placeholder="Super Secret Password" required>
+                <button type="submit">CHUG THAT LOGIN!</button>
+            </form>
+        </div>
+
+        <div id="register" class="auth-content">
+            <h2>Join the Monster Army</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Your Battle Name" required>
+                <input type="email" placeholder="Monster-fueled Email" required>
+                <input type="password" placeholder="Super Secret Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">ENLIST NOW!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
