@@ -1,66 +1,388 @@
-.navbar {
-  position: fixed; /* add this line */
-  top: 0; /* add this line */
-  width: 100%; /* add this line */
-  background-color: #6600CC; /* bright purple background */
-  color: #FFFFFF; /* white text */
-  padding: 1em; /* add some padding */
-  text-align: center; /* center the navbar items */
-  font-family: Arial, sans-serif; /* use a classic font */
-  border-bottom: 1px solid #FF00FF; /* add a neon pink border */
-}
-
-.navbar-item {
-  margin-right: 20px; /* add some space between navbar items */
-  text-decoration: none; /* remove underline from links */
-  color: #FFFFFF; /* white text */
-  font-size: 18px; /* make the text a bit bigger */
-}
-
-.navbar-item:hover {
-  color: #FFCC00; /* change text color to a bright yellow on hover */
-  text-decoration: underline; /* add an underline on hover */
-}
-
+/* =============== BASE STYLES =============== */
 body {
-  background-color: #000000; /* black background */
-  background-image: url("bg.gif"); /* add a starry night sky background image */
-  background-repeat: repeat; /* repeat the background image */
-  font-family: Arial, sans-serif; /* use a classic font */
-  color: #FFFFFF; /* white text */
-  text-align: center; /* center the text */
-
+  background-color: #000000;
+  background-image: url("bg.gif");
+  background-repeat: repeat;
+  font-family: Arial, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* Account for fixed navbar */
 }
 
-body a {
-  color: #FF00FF; /* neon pink links */
-  text-decoration: none; /* remove underline from links */
+a {
+  color: #FF00FF;
+  text-decoration: none;
 }
 
-body a:hover {
-  color: #FFFFFF; /* white text on hover */
-  text-decoration: underline; /* add an underline on hover */
+a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 
 .content {
-  padding: 2em; /* add some padding */
-  font-size: 18px; /* make the text a bit bigger */
+  padding: 2em;
+  font-size: 18px;
+  min-height: calc(100vh - 200px); /* Adjust based on your footer height */
 }
 
+/* =============== NAVBAR =============== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #6600CC;
+  color: #FFFFFF;
+  padding: 1em;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #FF00FF;
+  z-index: 1000;
+}
+
+.navbar-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.navbar-item:hover {
+  color: #FFCC00;
+  text-decoration: underline;
+}
+
+/* =============== AUTH SYSTEM =============== */
+.top-right-button {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#login-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+#login-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+#user-profile {
+  display: none;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(76, 175, 80, 0.2);
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+#user-profile:hover {
+  background-color: rgba(76, 175, 80, 0.4);
+}
+
+.mini-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4CAF50;
+  margin-right: 8px;
+  transition: all 0.3s;
+}
+
+#user-profile:hover .mini-avatar {
+  transform: rotate(15deg) scale(1.1);
+  box-shadow: 0 0 8px #4CAF50;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 1;
+  border-radius: 5px;
+  border: 1px solid #FF00FF;
+}
+
+.dropdown-content a {
+  color: #FFFFFF;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #4CAF50;
+  color: #000;
+}
+
+#user-profile:hover .dropdown-content {
+  display: block;
+}
+
+/* =============== MODAL STYLES =============== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.login-modal {
+  background-color: #220044;
+  border: 2px solid #FF00FF;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #FF00FF;
+}
+
+.modal-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #FF00FF;
+}
+
+.close-modal {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+}
+
+.close-modal:hover {
+  color: #FF00FF;
+  transform: rotate(90deg);
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #FF00FF;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #FFFFFF;
+  transition: all 0.3s;
+}
+
+.tab-button.active {
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body form {
+  display: none;
+}
+
+.modal-body form.active {
+  display: block;
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #FF00FF;
+  border-radius: 5px;
+  background-color: #110022;
+  color: white;
+}
+
+.modal-body input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px #4CAF50;
+}
+
+.monster-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.monster-button:hover {
+  background-color: #45a049;
+  transform: scale(1.02);
+}
+
+.switch-form {
+  text-align: center;
+  margin-top: 15px;
+  color: #FFFFFF;
+}
+
+.switch-form a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.switch-form a:hover {
+  text-decoration: underline;
+}
+
+/* =============== PROFILE PAGE =============== */
+.profile-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgba(102, 0, 204, 0.2);
+  border-radius: 10px;
+  border: 1px solid #FF00FF;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.avatar-edit {
+  position: relative;
+  width: 150px;
+  margin: 0 auto 20px;
+}
+
+#profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #4CAF50;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#profile-avatar:hover {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 0 15px #4CAF50;
+}
+
+#avatar-upload {
+  display: none;
+}
+
+#change-avatar {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #FF00FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+#change-avatar:hover {
+  background-color: #CC00CC;
+  transform: scale(1.05);
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(102, 0, 204, 0.4);
+  border-radius: 10px;
+  width: 45%;
+  min-width: 200px;
+  margin: 10px 0;
+  border: 1px solid #4CAF50;
+}
+
+.stat-box h3 {
+  color: #FFCC00;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.profile-actions button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.profile-actions button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* =============== FOOTER =============== */
 .footer {
-  position: absolute; /* add this line */
-  bottom: 0; /* add this line */
-  width: 100%; /* add this line */
-  background-color: #6600CC; /* bright purple background */
-  color: #FFFFFF; /* white text */
-  padding: 1em; /* add some padding */
-  text-align: center; /* center the text */
-  font-size: 14px; /* make the text a bit smaller */
-}
-
-/* Custom images */
-.monster-energy-can {
-  width: 100px; /* set the width of the image */
-  height: 100px; /* set the height of the image */
-  border: 1px solid #FF00FF; /* add a neon pink border */
+  width: 100%;
+  background-color: #6600CC;
+  color: #FFFFFF;
+  padding: 1em;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #FF00FF;
 }
