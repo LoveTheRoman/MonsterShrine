@@ -386,3 +386,117 @@ a:hover {
   font-size: 14px;
   border-top: 1px solid #FF00FF;
 }
+/* =============== MOBILE RESPONSIVE ADDITIONS =============== */
+@media (max-width: 768px) {
+  /* General adjustments */
+  body {
+    padding-top: 50px; /* Reduced for mobile */
+  }
+
+  .content {
+    padding: 1em;
+    font-size: 16px;
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+    padding: 0.5em;
+    position: fixed;
+    top: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .navbar-item {
+    margin-right: 15px;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  /* Auth button adjustments */
+  .top-right-button {
+    top: 60px; /* Position below navbar */
+    right: 10px;
+    padding: 8px 15px;
+  }
+
+  #login-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  /* Modal adjustments */
+  .login-modal {
+    width: 95%;
+    max-width: none;
+  }
+
+  .modal-body input {
+    padding: 10px;
+  }
+
+  /* Profile adjustments */
+  .profile-container {
+    padding: 15px;
+    margin: 20px auto;
+    width: 95%;
+  }
+
+  .profile-stats {
+    flex-direction: column;
+  }
+
+  .stat-box {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Avatar adjustments */
+  .avatar-edit {
+    width: 120px;
+  }
+
+  #profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 0.8em;
+    font-size: 12px;
+  }
+
+  /* Hide some decorative elements on mobile */
+  .content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small devices */
+  .navbar-item {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+
+  .top-right-button {
+    top: 55px;
+    font-size: 12px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .tab-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
